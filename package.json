@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-content-unocss-starter",
+  "version": "0.0.1",
+  "author": "Nicholas Berlette <nick@berlette.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": "nberlette/nuxt-unocss",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^3.2.1",
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
+    "@unocss/nuxt": "^0.45.25",
+    "@unocss/preset-icons": "^0.45.25",
+    "@unocss/preset-typography": "^0.45.25",
+    "@unocss/preset-web-fonts": "^0.45.25",
+    "@unocss/reset": "^0.45.25",
+    "nuxt": "npm:nuxt3@latest"
+  }
+}

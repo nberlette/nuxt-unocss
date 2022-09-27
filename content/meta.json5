@@ -1,0 +1,14 @@
+{
+  links: [
+    {
+      name: "Blog",
+      icon: "carbon:blog",
+      link: "/"
+    },
+    {
+      name: "Shop",
+      icon: "ion:shirt-outline",
+      link: "/shop"
+    }
+  ]
+}
