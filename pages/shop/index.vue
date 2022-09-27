@@ -80,7 +80,7 @@
 	const { page } = await useContent();
 
 	const { data } = await useAsyncData("products", () => {
-		return queryContent("shop").find();
+		return queryContent("shop").only("products").find();
 	});
 
 	const products = computed(() => data.value[0].products);
@@ -119,9 +119,9 @@
 	// function used to filter the products by category
 	const filterProducts = computed(() => {
 		if (!activeCategory.value) {
-			return products.value[0].products;
+			return products.value;
 		}
-		return products.value[0].products.filter((product) => {
+		return products.value.filter((product) => {
 			return (
 				product.category.toLowerCase() == activeCategory.value.toLowerCase()
 			);

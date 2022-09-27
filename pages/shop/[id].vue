@@ -63,8 +63,8 @@
 	const id = useRoute().params.id;
 
 	const { data: product } = await useAsyncData("product-" + id, async () => {
-		const q = await queryContent("shop").only("body").findOne();
-		return q.body.find((p) => p.id == parseInt(id));
+		const q = await queryContent("shop").only("products").findOne();
+		return q.products.find((p) => p.id == parseInt(id));
 	});
 
 	// function used to format the price

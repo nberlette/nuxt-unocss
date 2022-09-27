@@ -19,6 +19,7 @@
     "@unocss/preset-typography": "^0.45.25",
     "@unocss/preset-web-fonts": "^0.45.25",
     "@unocss/reset": "^0.45.25",
-    "nuxt": "npm:nuxt3@latest"
+    "nuxt": "npm:nuxt3@latest",
+    "type-fest": "^3.0.0"
   }
 }

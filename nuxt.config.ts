@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 import { resolve, dirname, basename } from 'pathe';
 import { fileURLToPath } from 'node:url';
 
-import colors from './colors';
+import unocss from './unocss.config'
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -60,93 +60,5 @@ export default defineNuxtConfig({
 	css: [
 		'~/assets/css/main.css',
 	],
-  unocss: {
-
-		// @unocss/preset-uno
-		uno: {},
-
-		// @unocss/preset-icons
-		icons: true,
-
-		// @unocss/preset-attributify
-		attributify: {
-			prefix: 'u-',
-		},
-
-		// @unocss/preset-typography
-		typography: {
-			selectorName: 'prose',
-		},
-
-		// @unocss/preset-web-fonts
-		webFonts: {
-			provider: 'google',
-			fonts: {
-				display: [
-					{
-						name: 'Montserrat',
-						weights: ['400', '700'],
-						italic: false,
-					},
-					{
-						name: 'IBM Plex Sans',
-						provider: 'none',
-					},
-					{
-						name: 'sans-serif',
-						provider: 'none',
-					},
-				],
-				sans: [
-					{
-						name: 'IBM Plex Sans',
-						italic: true,
-					},
-				],
-				mono: [
-					{
-						name: 'IBM Plex Mono',
-						italic: true,
-					},
-				],
-				serif: [
-					{
-						name: 'IBM Plex Serif',
-						italic: true,
-					},
-				],
-			},
-		},
-
-		// inject @unocss/reset/tailwind.css
-		preflight: true,
-
-		// shortcuts (aliases)
-		shortcuts: [
-			// fix the missing tailwind primary palettes
-			// [/^(text|bg|border|ring)-(primary|accent)(?:-(\d+))?/i,
-			// primaryPaletteShortcut],
-			{
-				'text-primary': 'text-primary-600',
-				'text-secondary': 'text-secondary-600',
-				'text-accent': 'text-secondary-600',
-			},
-		],
-
-		// custom rules
-		rules: [
-
-		],
- 
-		theme: {
-			colors,
-		}
-  },
-	// postcss: {
-	// 	plugins: {
-	// 		tailwindcss: {},
-	// 		autoprefixer: {},
-	// 		...(isDev ? {} : { cssnano }),
-	// 	},
-	// },
+  unocss: unocss,
 });
