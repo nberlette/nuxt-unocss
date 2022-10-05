@@ -1,10 +1,11 @@
 {
-  "name": "nuxt-content-unocss-starter",
+  "name": "nuxt-unocss",
   "version": "0.0.1",
   "author": "Nicholas Berlette <nick@berlette.com>",
   "license": "MIT",
   "private": true,
   "repository": "nberlette/nuxt-unocss",
+  "homepage": "https://github.com/nberlette/nuxt-unocss",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
