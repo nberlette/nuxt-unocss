@@ -1,4 +1,5 @@
 import type { UserConfig } from 'unocss'
+import type { Writable } from 'type-fest'
 
 const colors = useColors();
 
@@ -91,12 +92,13 @@ export default defineConfig<UserConfig<{
   ],
 
   theme: {
+    // @ts-ignore types mismatch
     colors,
   }
 })
 
 
-function defineConfig<T extends DeepPartial<ModuleOptions>>(val: T) {
+function defineConfig<T extends Writable<UserConfig<unknown>>>(val: T) {
   return val as unknown as T;
 }
 
@@ -442,5 +444,5 @@ function useColors() {
       'DEFAULT': '#4f46e5',
     },
   } as const;
-  return { ..._colors } as DeepMutable<typeof _colors>;
+  return { ..._colors } as Writable<typeof _colors>;
 }

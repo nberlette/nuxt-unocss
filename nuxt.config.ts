@@ -21,14 +21,10 @@ const r = (...parts: string[]) =>
 		p.trim().replace(/^[~][/]/g, './')
 	));
 
-
-const adaptColorPrefix = (p: string) => (p === 'bg' ? 'background-color' : p === 'border' ? 'border-color' : 'color');
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	modules: [
 		"@nuxt/content",
-		// "@nuxtjs/tailwindcss",
 		"@unocss/nuxt",
 	],
 	content: {
@@ -40,7 +36,11 @@ export default defineNuxtConfig({
 			},
 		},
 		highlight: {
-			theme: 'material-palenight',
+			theme: {
+				default: 'material-palenight',
+				dark: 'material-darker',
+				sepa: 'material-ocean',
+			},
 			preload: [
 				'vue-html',
 				'json',
